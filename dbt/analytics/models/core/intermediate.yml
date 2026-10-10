@@ -1,0 +1,95 @@
+version: 2
+
+models:
+ - name: dim_batsman
+   columns:
+    - name: BATSMAN_ID
+      tests:
+       - not_null
+       - unique   
+    - name: BATSMAN_SK
+      tests:
+       - not_null
+       - unique     
+ - name: dim_bowler
+   columns:
+    - name: BOWLER_ID
+      tests:
+       - not_null
+       - unique
+    - name: BOWLER_SK
+      tests:
+       - not_null
+       - unique
+ - name: dim_contract
+   columns:
+    - name: CONTRACT_ID
+      tests: 
+       - not_null
+       - unique
+    - name: CONTRACT_SK
+      tests: 
+       - not_null
+       - unique
+ - name: dim_drs
+   columns:
+    - name: DRS_REVIEW_ID
+      tests:
+       - not_null
+       - unique
+    - name: DRS_REVIEW_SK
+      tests:
+       - not_null
+       - unique
+ - name: dim_match_details
+   columns:
+    - name: MATCH_ID
+      tests:
+       - not_null
+       - unique
+    - name: MATCH_SK
+      tests:
+       - not_null
+       - unique
+ - name: dim_team_details
+   columns:
+    - name: TEAM_ID
+      tests:
+       - not_null
+       - unique
+    - name: TEAM_SK
+      tests:
+       - not_null
+       - unique
+ - name: dim_venue
+   columns:
+    - name: VENUE_ID
+      tests:
+       - not_null
+       - unique
+    - name: VENUE_SK
+      tests:
+       - unique
+       - not_null
+
+ - name: fact_table
+   columns:
+    - name: DELIVERY_ID
+      tests: 
+       - not_null
+       - unique
+    - name: BATSMAN_SK
+      tests:
+       - not_null
+    - name: BOWLER_SK
+      tests:
+       - not_null
+    - name: VENUE_SK
+      tests:
+       - not_null
+    - name: TEAM_SK
+      tests:
+       - not_null
+    - name: DELIVERY_TIMESTAMP
+      tests:
+       - not_null
