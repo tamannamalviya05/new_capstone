@@ -1,0 +1,115 @@
+[2026-10-10T07:33:21.131+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-10-10T07:33:21.172+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: cricket_pipeline.raw_to_staging manual__2026-10-10T07:33:15.030611+00:00 [queued]>
+[2026-10-10T07:33:21.185+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: cricket_pipeline.raw_to_staging manual__2026-10-10T07:33:15.030611+00:00 [queued]>
+[2026-10-10T07:33:21.187+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-10-10T07:33:21.211+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): raw_to_staging> on 2026-10-10 07:33:15.030611+00:00
+[2026-10-10T07:33:21.241+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'cricket_pipeline', 'raw_to_staging', 'manual__2026-10-10T07:33:15.030611+00:00', '--job-id', '180', '--raw', '--subdir', 'DAGS_FOLDER/cricket_pipeline.py', '--cfg-path', '/tmp/tmpcahq8z3f']
+[2026-10-10T07:33:21.250+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2359) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-10-10T07:33:21.251+0000] {standard_task_runner.py:105} INFO - Job 180: Subtask raw_to_staging
+[2026-10-10T07:33:21.252+0000] {standard_task_runner.py:72} INFO - Started process 2367 to run task
+[2026-10-10T07:33:21.378+0000] {task_command.py:467} INFO - Running <TaskInstance: cricket_pipeline.raw_to_staging manual__2026-10-10T07:33:15.030611+00:00 [running]> on host 8399a0cea29d
+[2026-10-10T07:33:21.595+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='cricket_pipeline' AIRFLOW_CTX_TASK_ID='raw_to_staging' AIRFLOW_CTX_EXECUTION_DATE='2026-10-10T07:33:15.030611+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-10T07:33:15.030611+00:00'
+[2026-10-10T07:33:21.598+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-10-10T07:33:21.630+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2026-10-10T07:33:21.633+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt/analytics && dbt build --project-dir /opt/***/dbt/analytics --profiles-dir /home/***/.dbt --select path:models/staging']
+[2026-10-10T07:33:21.658+0000] {subprocess.py:99} INFO - Output:
+[2026-10-10T07:33:30.883+0000] {subprocess.py:106} INFO - [0m07:33:30  Running with dbt=1.11.11
+[2026-10-10T07:33:34.192+0000] {subprocess.py:106} INFO - [0m07:33:34  Registered adapter: snowflake=1.11.6
+[2026-10-10T07:33:34.849+0000] {subprocess.py:106} INFO - [0m07:33:34  Unable to do partial parsing because profile has changed
+[2026-10-10T07:33:39.796+0000] {subprocess.py:106} INFO - [0m07:33:39  [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+[2026-10-10T07:33:39.797+0000] {subprocess.py:106} INFO - There are 2 unused configuration paths:
+[2026-10-10T07:33:39.798+0000] {subprocess.py:106} INFO - - models.analytics.mart
+[2026-10-10T07:33:39.800+0000] {subprocess.py:106} INFO - - models.analytics.core
+[2026-10-10T07:33:40.286+0000] {subprocess.py:106} INFO - [0m07:33:40  Found 1 model, 1 source, 539 macros
+[2026-10-10T07:33:40.324+0000] {subprocess.py:106} INFO - [0m07:33:40
+[2026-10-10T07:33:40.326+0000] {subprocess.py:106} INFO - [0m07:33:40  Concurrency: 4 threads (target='dev')
+[2026-10-10T07:33:40.327+0000] {subprocess.py:106} INFO - [0m07:33:40
+[2026-10-10T07:33:44.628+0000] {subprocess.py:106} INFO - [0m07:33:44  1 of 1 START sql view model STAGING.stg_cricket_data ........................... [RUN]
+[2026-10-10T07:33:45.448+0000] {subprocess.py:106} INFO - [0m07:33:45  1 of 1 ERROR creating sql view model STAGING.stg_cricket_data .................. [[31mERROR[0m in 0.80s]
+[2026-10-10T07:33:46.281+0000] {subprocess.py:106} INFO - [0m07:33:46
+[2026-10-10T07:33:46.285+0000] {subprocess.py:106} INFO - [0m07:33:46  Finished running 1 view model in 0 hours 0 minutes and 5.95 seconds (5.95s).
+[2026-10-10T07:33:46.782+0000] {subprocess.py:106} INFO - [0m07:33:46
+[2026-10-10T07:33:46.784+0000] {subprocess.py:106} INFO - [0m07:33:46  [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[2026-10-10T07:33:46.785+0000] {subprocess.py:106} INFO - [0m07:33:46
+[2026-10-10T07:33:46.788+0000] {subprocess.py:106} INFO - [0m07:33:46  [31mFailure in model stg_cricket_data (models/staging/stg_cricket_data.sql)[0m
+[2026-10-10T07:33:46.789+0000] {subprocess.py:106} INFO - [0m07:33:46    Database Error in model stg_cricket_data (models/staging/stg_cricket_data.sql)
+[2026-10-10T07:33:46.790+0000] {subprocess.py:106} INFO -   001003 (42000): SQL compilation error:
+[2026-10-10T07:33:46.792+0000] {subprocess.py:106} INFO -   syntax error line 74 at position 4 unexpected 'TRY_TO_TIMESTAMP_NTZ'.
+[2026-10-10T07:33:46.793+0000] {subprocess.py:106} INFO -   syntax error line 74 at position 24 unexpected '('.
+[2026-10-10T07:33:46.793+0000] {subprocess.py:106} INFO -   syntax error line 151 at position 77 unexpected ')'.
+[2026-10-10T07:33:46.795+0000] {subprocess.py:106} INFO -   compiled code at target/run/analytics/models/staging/stg_cricket_data.sql
+[2026-10-10T07:33:46.796+0000] {subprocess.py:106} INFO - [0m07:33:46
+[2026-10-10T07:33:46.797+0000] {subprocess.py:106} INFO - [0m07:33:46    compiled code at target/compiled/analytics/models/staging/stg_cricket_data.sql
+[2026-10-10T07:33:46.797+0000] {subprocess.py:106} INFO - [0m07:33:46
+[2026-10-10T07:33:46.799+0000] {subprocess.py:106} INFO - [0m07:33:46  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 NO-OP=0 TOTAL=1
+[2026-10-10T07:33:48.544+0000] {subprocess.py:110} INFO - Command exited with return code 1
+[2026-10-10T07:33:48.600+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-10-10T07:33:48.626+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=cricket_pipeline, task_id=raw_to_staging, run_id=manual__2026-10-10T07:33:15.030611+00:00, execution_date=20261010T073315, start_date=20261010T073321, end_date=20261010T073348
+[2026-10-10T07:33:48.794+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-10-10T07:33:48.798+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 180 for task raw_to_staging (Bash command failed. The command returned a non-zero exit code 1.; 2367)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 276, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-10-10T07:33:48.898+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2026-10-10T07:33:48.957+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

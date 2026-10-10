@@ -1,0 +1,22 @@
+[2026-10-10T07:39:52.141+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2026-10-10T07:39:52.189+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: cricket_pipeline.load_csv_to_raw manual__2026-10-10T07:39:49.284240+00:00 [queued]>
+[2026-10-10T07:39:52.213+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: cricket_pipeline.load_csv_to_raw manual__2026-10-10T07:39:49.284240+00:00 [queued]>
+[2026-10-10T07:39:52.215+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 1
+[2026-10-10T07:39:52.243+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): load_csv_to_raw> on 2026-10-10 07:39:49.284240+00:00
+[2026-10-10T07:39:52.263+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'cricket_pipeline', 'load_csv_to_raw', 'manual__2026-10-10T07:39:49.284240+00:00', '--job-id', '186', '--raw', '--subdir', 'DAGS_FOLDER/cricket_pipeline.py', '--cfg-path', '/tmp/tmpquf37bp0']
+[2026-10-10T07:39:52.270+0000] {standard_task_runner.py:105} INFO - Job 186: Subtask load_csv_to_raw
+[2026-10-10T07:39:52.274+0000] {logging_mixin.py:190} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=2557) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-10-10T07:39:52.276+0000] {standard_task_runner.py:72} INFO - Started process 2561 to run task
+[2026-10-10T07:39:52.392+0000] {task_command.py:467} INFO - Running <TaskInstance: cricket_pipeline.load_csv_to_raw manual__2026-10-10T07:39:49.284240+00:00 [running]> on host 8399a0cea29d
+[2026-10-10T07:39:52.830+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='cricket_pipeline' AIRFLOW_CTX_TASK_ID='load_csv_to_raw' AIRFLOW_CTX_EXECUTION_DATE='2026-10-10T07:39:49.284240+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-10-10T07:39:49.284240+00:00'
+[2026-10-10T07:39:52.839+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2026-10-10T07:39:52.990+0000] {base.py:84} INFO - Retrieving connection 'snowflake_conn'
+[2026-10-10T07:39:52.993+0000] {connection.py:660} INFO - Snowflake Connector for Python Version: 4.7.3, Python Version: 3.12.9, Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.36
+[2026-10-10T07:39:52.995+0000] {connection.py:1773} INFO - Connecting to GLOBAL Snowflake domain
+[2026-10-10T07:40:34.663+0000] {logging_mixin.py:190} INFO - ('Copy executed with 0 files processed.',)
+[2026-10-10T07:40:34.668+0000] {python.py:240} INFO - Done. Returned value was: None
+[2026-10-10T07:40:34.727+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2026-10-10T07:40:34.729+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=cricket_pipeline, task_id=load_csv_to_raw, run_id=manual__2026-10-10T07:39:49.284240+00:00, execution_date=20261010T073949, start_date=20261010T073952, end_date=20261010T074034
+[2026-10-10T07:40:35.116+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2026-10-10T07:40:35.224+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2026-10-10T07:40:35.240+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,14 @@
+capstone_snowflake:
+  target: dev
+
+  outputs:
+    dev:
+      type: snowflake
+      account: DVWPLES-MZB77847
+      user: TAMANNAMALVIYA
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: SYSADMIN
+      database: PROJECT_DB
+      schema: RAW
+      warehouse: ANALYTICS_WH
+      threads: 4
