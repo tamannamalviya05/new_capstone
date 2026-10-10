@@ -65,4 +65,9 @@ with DAG(
         bash_command = "cd /opt/airflow/dbt/analytics && dbt build --project-dir /opt/airflow/dbt/analytics --profiles-dir /home/airflow/.dbt --select path:models/staging",
     )
 
-    load_raw_data >> raw_to_staging
+    staging_to_core = BashOperator(
+        task_id = "raw_to_staging",
+        bash_command = "cd /opt/airflow/dbt/analytics && dbt build --project-dir /opt/airflow/dbt/analytics --profiles-dir /home/airflow/.dbt --select path:models/core",
+    )
+
+    load_raw_data >> raw_to_staging >> staging_to_core
